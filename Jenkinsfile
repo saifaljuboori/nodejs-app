@@ -11,10 +11,6 @@ pipeline {
         stage("increment version") {
            steps {
               script {
-                  sh "which node"
-                  sh "node --version"
-                  sh "which npm"
-                  sh "npm --version"
                   incrementVersionExercise()
              }
           }
