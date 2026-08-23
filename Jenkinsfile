@@ -27,9 +27,16 @@ pipeline {
         stage("build and push docker image") {
             steps {
                 script {
-                    buildDockerImageExercise()
-                    dockerLoginExercise()
-                    dockerPushExercise()
+                    buildDockerImageEcr()
+                    dockerLoginEcr()
+                    dockerPushEcr()
+                }
+            }
+        }
+         stage("deploy") {
+             steps {
+                 script {
+                     deployToEcrEc2()
                 }
             }
         }
